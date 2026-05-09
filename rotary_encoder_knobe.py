@@ -63,4 +63,14 @@ class RotaryEncoderKnobe:
             self._value_changed = True
        
 
-   
+def main():
+    knobe = RotaryEncoderKnobe(SW_PIN, DT_PIN, CLK_PIN)
+    while True:
+        if knobe.value_changed:
+            print(f"Value changed, value: {knobe.value}")
+        # if knobe.button_pressed:
+        #     print(f"Button pressed")
+        # time.sleep(0.1)
+
+if __name__ == "__main__":
+    main()
